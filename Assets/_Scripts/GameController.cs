@@ -5,12 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 	// PUBLIC INSTANCE VARIABLES
-	public int tankCount;
+	public int tankCount = 3;
 	public GameObject tank;
 
 	public Text ScoreLabel;
 	public Text LivesLabel;
 	public Text GameOverLabel;
+	public Text HighScoreLabel;
 	public PlayerController Tank;
 	public EnemyController enemy;
 
@@ -52,7 +53,6 @@ public class GameController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-
 		this._GenerateTanks ();
 	}
 	
@@ -67,6 +67,7 @@ public class GameController : MonoBehaviour {
 		this.ScoreValue = 0;
 		this.LivesValue = 5;
 		this.GameOverLabel.gameObject.SetActive (false);
+		this.HighScoreLabel.gameObject.SetActive (false);
 
 		for (int count=0; count < this.tankCount; count++) {
 			Instantiate(tank);
@@ -80,5 +81,6 @@ public class GameController : MonoBehaviour {
 		this.LivesLabel.gameObject.SetActive (false);
 		this.GameOverLabel.gameObject.SetActive (true);
 		this.Tank.gameObject.SetActive (false);
+		this.HighScoreLabel.gameObject.SetActive (true);
 	}
 }
