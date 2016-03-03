@@ -18,7 +18,7 @@ public class Tankcollider : MonoBehaviour {
 	}
 	public void OnTriggerEnter2D(Collider2D other){
 		if (other.gameObject.CompareTag ("Enemy")) {
-			this._isTank.Play ();
+			//this._isTank.Play ();
 			this.gamecontroller.LivesValue -= 1;
 		}
 

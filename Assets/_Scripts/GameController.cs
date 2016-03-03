@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour {
 	public Text HighScoreLabel;
 	public PlayerController Tank;
 	public EnemyController enemy;
+	public Button Restart;
 
 	private int _livesValue;
 	private int _scoreValue;
@@ -68,6 +69,7 @@ public class GameController : MonoBehaviour {
 		this.LivesValue = 5;
 		this.GameOverLabel.gameObject.SetActive (false);
 		this.HighScoreLabel.gameObject.SetActive (false);
+		//this.Restart.gameObject.SetActive (false);
 
 		for (int count=0; count < this.tankCount; count++) {
 			Instantiate(tank);
@@ -82,5 +84,8 @@ public class GameController : MonoBehaviour {
 		this.GameOverLabel.gameObject.SetActive (true);
 		this.Tank.gameObject.SetActive (false);
 		this.HighScoreLabel.gameObject.SetActive (true);
+	//	this.Restart.gameObject.SetActive (true);
 	}
+
+
 }
